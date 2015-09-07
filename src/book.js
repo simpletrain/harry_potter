@@ -1,6 +1,6 @@
 'use strict';
 
-function Book (section){
+function Book(section) {
     this.section = section;
     this.price = 8;
 }

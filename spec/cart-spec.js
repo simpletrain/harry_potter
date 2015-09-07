@@ -20,8 +20,8 @@ describe('Cart', function () {
             var book1 = new Book(1);
             var book2 = new Book(2);
             var cart = new Cart();
-            cart.addBooks(book1,3);
-            cart.addBooks(book2,5);
+            cart.addBooks(book1, 3);
+            cart.addBooks(book2, 5);
             expect(cart.bookOneCount).toBe(3);
             expect(cart.bookTwoCount).toBe(5);
         });
