@@ -18,7 +18,10 @@ Calculator.prototype.calculateAmount = function (cart) {
         this.subBooksCount(differentBooksCount);
 
         this.amount += this.getSubtotal(differentBooksCount);
+
     } while (this.countDifferentBooks() > 0);
+
+    return this.amount;
 };
 
 Calculator.prototype.countDifferentBooks = function () {
