@@ -1,7 +1,6 @@
 'use strict';
 
 var Cart = require('../src/cart.js');
-var Book = require('../src/book.js');
 
 describe('Cart', function () {
 
@@ -17,8 +16,8 @@ describe('Cart', function () {
     describe('#addBooks', function () {
 
         it('can add books in cart', function () {
-            var book1 = new Book(1);
-            var book2 = new Book(2);
+            var book1 = {section : 1};
+            var book2 = {section : 2};
             var cart = new Cart();
             cart.addBooks(book1, 3);
             cart.addBooks(book2, 5);
