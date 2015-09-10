@@ -4,8 +4,14 @@ var Calculator = require('../src/calculator.js');
 
 describe('Calculator', function () {
 
-    it('should has properties', function () {
+    it('should has array properties called booksCount', function () {
+        var calculator = new Calculator();
+        expect(Array.isArray(calculator.booksCount)).toBe(true);
+    });
 
+    it('should has number properties called amount', function () {
+        var calculator = new Calculator();
+        expect(calculator.amount).toBe(0);
     });
 
     describe('#calculateAmount', function () {
