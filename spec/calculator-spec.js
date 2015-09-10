@@ -35,4 +35,22 @@ describe('Calculator', function () {
 
     });
 
+    describe('#countDifferentBooks', function () {
+
+        it('should return 4 different books when numbers of rest of different book are 4', function () {
+            calculator.booksCount = [2, 2, 2, 1, 1];
+
+            var differentBooks = calculator.countDifferentBooks();
+            expect(differentBooks).toBe(4);
+        });
+
+        it('should return exactly different books when numbers of rest of different book are  not 4', function () {
+            calculator.booksCount = [2, 2, 1, 1, 1];
+
+            var differentBooks = calculator.countDifferentBooks();
+            expect(differentBooks).toBe(5);
+        });
+
+    });
+
 });
