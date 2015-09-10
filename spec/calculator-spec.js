@@ -53,4 +53,37 @@ describe('Calculator', function () {
 
     });
 
+    describe('#countRestDifferentBooks', function () {
+
+        it('should count right numbers of rest of different books when take out 4 books', function () {
+            calculator.booksCount = [3, 3, 1, 1, 0];
+
+            var restDifferentBooks = calculator.countRestDifferentBooks();
+            expect(restDifferentBooks).toBe(2);
+        });
+
+    });
+
+    describe('#countRestDifferentBooks', function () {
+
+        it('should count right numbers of rest of different books when take out 4 books', function () {
+            calculator.booksCount = [3, 3, 1, 1, 0];
+
+            var restDifferentBooks = calculator.countRestDifferentBooks();
+            expect(restDifferentBooks).toBe(2);
+        });
+
+    });
+
+    describe('#subBooksCount', function () {
+
+        it('should count right numbers of rest of different books when take out 4 books', function () {
+            calculator.booksCount = [3, 3, 1, 1, 0];
+
+            calculator.subBooksCount(4);
+            expect(calculator.booksCount).toEqual([2, 2, 0, 0, 0]);
+        });
+
+    });
+
 });
