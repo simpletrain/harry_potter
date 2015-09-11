@@ -33,6 +33,20 @@ describe('Calculator', function () {
             expect(amount).toBe(51.2);
         });
 
+        //跟施采强错的一模一样，代码倒是写的还算清楚，但是测试用例太不足了，测那么多无关的内容，关键的折扣部分却很少。多想几个case。
+        //先把这个改了我再看别的。
+        it('can calculate right amount', function () {
+            var cart = {
+                bookOneCount: 1,
+                bookTwoCount: 4,
+                bookThreeCount: 3,
+                bookFourCount: 4,
+                bookFiveCount: 4
+            };
+            var amount = calculator.calculateAmount(cart);
+
+            expect(amount).toBe(16*(8*(1-0.20)));
+        });
     });
 
     describe('#countDifferentBooks', function () {
