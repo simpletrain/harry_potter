@@ -1,6 +1,7 @@
 {
   "name": "harry_poter",
   "version": "1.0.0",
+  "comments": "咋没写task捏？",
   "dependencies": {
     "jasmine": "^2.3.2"
   }
