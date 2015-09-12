@@ -1,7 +1,10 @@
 {
   "name": "harry_poter",
   "version": "1.0.0",
-  "comments": "咋没写task捏？",
+  "description": "Calculate the price of any conceivable shopping basket (containing only Harry Potter books), giving as big a discount as possible.",
+  "scripts": {
+    "test": "jasmine"
+  },
   "dependencies": {
     "jasmine": "^2.3.2"
   }
