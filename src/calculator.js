@@ -1,74 +1,31 @@
 'use strict';
 
 function Calculator() {
-    this.booksCount = [];
+    this.packagesCount = [];
     this.amount = 0;
 }
 
-Calculator.prototype.calculateAmount = function (cart) {
-    this.booksCount.push(cart.bookOneCount, cart.bookTwoCount, cart.bookThreeCount, cart.bookFourCount, cart.bookFiveCount);
+Calculator.prototype.calculateAmount = function (packager) {
+    var _this = this;
 
-    do {
-        this.booksCount.sort(function (a, b) {
-            return b - a;
-        });
+    this.packagesCount.push(packager.oneBook, packager.twoDifferentBooks, packager.threeDifferentBooks, packager.fourDifferentBooks, packager.fiveDifferentBooks);
 
-        var differentBooksCount = this.countDifferentBooks();
-
-        this.subBooksCount(differentBooksCount);
-
-        this.amount += this.getSubtotal(differentBooksCount);
-
-    } while (this.countDifferentBooks() > 0);
-
-    return this.amount;
-};
-
-Calculator.prototype.countDifferentBooks = function () {
-    var differentBooksCount = this.booksCount.filter(function (bookCount) {
-        return bookCount > 0;
-    }).length;
-
-    if (differentBooksCount >= 4 && this.countRestDifferentBooks() === 4) {
-        differentBooksCount = 4;
-    }
-
-    return differentBooksCount;
-};
-
-Calculator.prototype.countRestDifferentBooks = function () {
-    var restBooksCount = [];
-
-    this.booksCount.forEach(function (bookCount, index) {
-        if (index < 4) {
-            restBooksCount.push(bookCount - 1)
-        } else {
-            restBooksCount.push(bookCount)
-        }
+    this.packagesCount.forEach(function (packageCount, index) {
+        _this.amount += _this.getSubtotal(index + 1, packageCount)
     });
-
-    return restBooksCount.filter(function (bookCount) {
-        return bookCount > 0;
-    }).length;
 };
 
-Calculator.prototype.subBooksCount = function (count) {
-    for (var i = 0; i < count; i++) {
-        this.booksCount[i]--;
-    }
-};
-
-Calculator.prototype.getSubtotal = function (count) {
-    if (count === 1) {
-        return 8;
-    } else if (count === 2) {
-        return 15.2;
-    } else if (count === 3) {
-        return 21.6;
-    } else if (count === 4) {
-        return 25.6;
+Calculator.prototype.getSubtotal = function (bookNumber, count) {
+    if (bookNumber === 1) {
+        return 8 * count;
+    } else if (bookNumber === 2) {
+        return 15.2 * count;
+    } else if (bookNumber === 3) {
+        return 21.6 * count;
+    } else if (bookNumber === 4) {
+        return 25.6 * count;
     } else {
-        return 30;
+        return 30 * count;
     }
 };
 
